@@ -1,0 +1,6 @@
+.DS_STORE
+*.swp
+*.log
+log/*.log
+tmp/**/*
+db/development.sqlite3
