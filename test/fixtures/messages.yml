@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  text: MyString
+  timestamp: 2010-03-10 11:30:07
+  priority: MyString
+  user_id: 1
+  reply_to: 1
+
+two:
+  text: MyString
+  timestamp: 2010-03-10 11:30:07
+  priority: MyString
+  user_id: 1
+  reply_to: 1

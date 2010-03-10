@@ -1,0 +1,28 @@
+<p>
+  <b>Text:</b>
+  <%=h @message.text %>
+</p>
+
+<p>
+  <b>Timestamp:</b>
+  <%=h @message.timestamp %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @message.priority %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @message.user_id %>
+</p>
+
+<p>
+  <b>Reply to:</b>
+  <%=h @message.reply_to %>
+</p>
+
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>
