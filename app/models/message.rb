@@ -5,7 +5,10 @@ class Message < ActiveRecord::Base
   has_one :reply,
           :class_name => "Message",
           :foreign_key => "reply_to"
-          
+  
+   validates_presence_of :text, :priority            
+            
+            
   # Named Scopes
   named_scope :recent,             
               {:order => 'created_at DESC', limit => 5}
