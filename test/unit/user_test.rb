@@ -7,6 +7,7 @@ class UserTest < Test::Unit::TestCase
     end
 
     should "return its full name" do
+      assert_equal "MyString MyString", @user.fullname
       assert_equal @user.firstname + " " + @user.lastname, @user.fullname
     end
   end
