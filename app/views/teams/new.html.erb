@@ -1,12 +1,22 @@
 <h1>New team</h1>
 
-<% form_for(@team) do |f| %>
+<% form_for(@team.with_extra_users) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
+  <% f.fields_for(:users) do |user_form| -%>
+  	<p> 
+		First Name: <%= user_form.text_field :firstname %><br>
+		Last Name: <%= user_form.text_field :lastname %><br>
+		User Name: <%= user_form.text_field :username %><br>
+		Password: <%= user_form.text_field :password %><br>
+		Email: <%= user_form.text_field :email %>
+		
+	</p>
+  <% end %>
   <p>
     <%= f.submit 'Create' %>
   </p>
