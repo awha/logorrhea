@@ -1,14 +1,28 @@
 <h1>Editing team</h1>
 
-<% form_for(@team) do |f| %>
-  <%= f.error_messages %>
+<% form_for(@team.with_extra_users) do |team_form| %>
+  <%= team_form.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= team_form.label :name %><br />
+    <%= team_form.text_field :name %>
   </p>
+  <table>
+    <tr>
+      <th>User Name</th><th>Password</th><th>E-mail</th><th>First name</th><th>Last name</th>
+    </tr>
+    <% team_form.fields_for(:users) do |user_form| -%>
+      <tr>
+        <td><%= user_form.text_field :username %></td>
+        <td><%= user_form.text_field :password %></td>
+        <td><%= user_form.text_field :email %></td>
+        <td><%= user_form.text_field :firstname %></td>
+        <td><%= user_form.text_field :lastname %></td>
+      </tr>
+    <% end -%>
+  </table>
   <p>
-    <%= f.submit 'Update' %>
+    <%= team_form.submit 'Update' %>
   </p>
 <% end %>
 
