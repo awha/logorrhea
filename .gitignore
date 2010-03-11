@@ -10,3 +10,4 @@ db/schema.rb
 nbproject/
 nbproject/private/
 .tmp_*
+*~
