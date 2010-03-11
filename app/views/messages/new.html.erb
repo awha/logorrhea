@@ -7,18 +7,26 @@
     <%= f.label :text %><br />
     <%= f.text_field :text %>
   </p>
-  <p>
+<!--  <p>
     <%= f.label :timestamp %><br />
     <%= f.datetime_select :timestamp %>
-  </p>
-  <p>
+  </p>  -->
+  <p>   
     <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
+    <%= f.select(:priority, %w{Urgent Important Casual Fun})%>
+<!--     %= f.text_field :priority %   -->
   </p>
-  <p>
+  
+   <%=
+  @users = User.find(:all, :order => "lastname")
+  f.collection_select(:user_id, @users, :id, :fullname)
+  
+   %>
+  
+  <!--  <p>
     <%= f.label :user_id %><br />
     <%= f.text_field :user_id %>
-  </p>
+  </p>   -->
   <p>
     <%= f.label :reply_to %><br />
     <%= f.text_field :reply_to %>

@@ -11,7 +11,7 @@ class Message < ActiveRecord::Base
             
   # Named Scopes
   named_scope :recent,             
-              {:order => 'created_at DESC', limit => 5}
+              {:order => 'created_at DESC', :limit => 5}
              
               
   named_scope :type_message

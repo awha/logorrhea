@@ -14,7 +14,13 @@
     <td><%=h message.text %></td>
     <td><%=h message.timestamp %></td>
     <td><%=h message.priority %></td>
-    <td><%=h message.user_id %></td>
+<!--    <td>%=h message.user_id %  /td>  -->
+      <%=
+	  if message.user_id.nil?
+           message.user_id = 1
+	  end
+	   %> 
+	 <td><%=h message.user.fullname %></td>
     <td><%=h message.reply_to %></td>
     <td><%= link_to 'Show', message %></td>
     <td><%= link_to 'Edit', edit_message_path(message) %></td>

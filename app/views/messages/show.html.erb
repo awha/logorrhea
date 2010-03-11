@@ -13,9 +13,15 @@
   <%=h @message.priority %>
 </p>
 
+  <%=
+	  if message.user_id.nil?
+           message.user_id = 1
+	  end
+   %> 
+
 <p>
   <b>User:</b>
-  <%=h @message.user_id %>
+  <%=h @message.user.fullname %>
 </p>
 
 <p>

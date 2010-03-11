@@ -42,6 +42,8 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
 
+     @message.timestamp = Time.now
+
     respond_to do |format|
       if @message.save
         flash[:notice] = 'Message was successfully created.'
